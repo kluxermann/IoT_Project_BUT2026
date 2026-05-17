@@ -64,7 +64,7 @@ This project focuses on the development of a **GPS Tracker** designed for monito
 ---
 
 ## ✅ Project Deliverables Checklist
-- [✅] **Technical Documentation** (Justification of hardware, protocols, and power source).
+- [x] **Technical Documentation** (Justification of hardware, protocols, and power source).
 - [ ] **Power Consumption Analysis** (Calculations showing how the interval affects battery life).
-- [ ] **Source Code** (The final firmware for the tracker).
+- [x] **Source Code** (The final firmware for the tracker).
 - [ ] **Functional Demo** (Live demonstration of tracking and Thingsboard integration).
