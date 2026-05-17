@@ -28,11 +28,10 @@ This project focuses on the development of a **GPS Tracker** designed for monito
 ---
 
 ## 🔌 Hardware & Wireless Stack
-*(To be completed based on final implementation choices)*
 
-- **Microcontroller:** e.g., ESP32, STM32, Pico W, etc.
-- **Wireless Tech:** e.g., LoRaWAN, NB-IoT, Sigfox, GSM, LTE-M *(chosen for broad CZ/SK coverage)*
-- **Positioning:** GPS Module (e.g., NEO-6M)
+- **Microcontroller:** MicroPython compatible board (e.g., Raspberry Pi Pico / ESP32).
+- **Wireless Tech:** Quectel BG77 LPWA module (LTE Cat M1 / NB-IoT via Vodafone network).
+- **Positioning:** Integrated GNSS on the BG77 module.
 - **Power Source:** Battery (e.g., Li-Ion 18650, Li-Po) paired with a power management IC.
 
 ---
@@ -40,12 +39,12 @@ This project focuses on the development of a **GPS Tracker** designed for monito
 ## ⚙️ Technical Implementation
 
 ### 1. Protocols & Technologies
-- **Wireless Standard:** [Add reasoning for the technology choice considering CZ/SK coverage].
-- **Application Protocol:** [Add reasoning for protocol choice, e.g., MQTT for Thingsboard, CoAP, HTTP].
+- **Wireless Standard:** LTE-M / NB-IoT (Vodafone IoT) chosen for robust low-power wide-area coverage across CZ/SK.
+- **Application Protocol:** CoAP over UDP for efficient, low-overhead communication with Thingsboard.
 
 ### 2. Logic & Communication Flow
-- **Data Acquisition:** Parsing NMEA sentences from the GPS module.
-- **Transmission:** Waking up from deep sleep, connecting to the network, and sending telemetry payloads.
+- **Data Acquisition:** Utilizing AT commands (`AT+QGPSLOC`) to retrieve coordinates from the BG77 module. Includes a fallback mechanism generating coordinates around Brno if the GPS fix fails.
+- **Transmission:** Establishing a UDP socket and sending CoAP telemetry packets containing JSON location data.
 - **Remote Configuration:** Receiving downlink commands from Thingsboard to update the tracking interval dynamically.
 
 ### 3. Power Management
