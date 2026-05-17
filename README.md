@@ -9,10 +9,10 @@
 ---
 
 ## 👥 Team Members
-- **Mykhailo Krasichkov** - Responsible for ... (to be filled)
-- **Tomáš Běčák** - Responsible for ...
-- **Andrej Balajka** - Responsible for ...
-- **Martin Mikeš** - Responsible for ...
+- **Mykhailo Krasichkov** - 256512
+- **Tomáš Běčák** - 256450
+- **Andrej Balajka** - 256719
+- **Martin Mikeš** - 256779
 
 ---
 
