@@ -54,32 +54,49 @@ As is in the nature of the project we will need to send data frequently, every 3
 - **Remote Configuration:** Receiving downlink commands from Thingsboard to update the tracking interval dynamically.
 
 ### 3. Power Management
-- Measured active, idle, and deep-sleep currents using a laboratory probe:
-  - $I_{\text{active}} = 32 \text{ mA}$
-  - $I_{\text{sleep}} = 0.005 \text{ mA}$
-  - $t_{\text{active}} = 30 \text{ s}$
-  - $t_{\text{sleep}} = 1800 \text{ s}$
-  - $t_{\text{overall}} = 1830 \text{ s}$
 
-- **Battery Configuration:** 4x SAFT LSH 20 ($\text{Li-SOCl}_2$) in parallel
-  - Nominal capacity: $13000\text{ mAh}$ per battery
-  - Total nominal capacity: $4 \times 13000\text{ mAh} = 52000\text{ mAh}$
-  - Usable capacity (de-rated to $85\%$): $44200\text{ mAh}$
+#### Measured Parameters
 
-- **Power Consumption (30-Minute Interval)**
-  $$I_{\text{avg, 30 min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
-  $$I_{\text{avg, 30 min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 1800\text{ s})}{1830\text{ s}} = \frac{969}{1830}\text{ mA} \approx 0.53\text{ mA}$$
-  $$\text{Battery Life}_{\text{hours}} = \frac{44200\text{ mAh}}{0.53\text{ mA}} \approx 83396\text{ hours}$$
-  $$\text{Battery Life}_{\text{days}} = \frac{83396\text{ hours}}{24\text{ hours/day}} \approx 3474.8\text{ days}$$
-  $$\text{Battery Life}_{\text{years}} = \frac{3474.8\text{ days}}{365\text{ days/year}} \approx 9.52\text{ years}$$
+Measured active, idle, and deep-sleep currents using a laboratory probe:
+- $I_{\text{active}} = 32 \text{ mA}$
+- $I_{\text{sleep}} = 0.005 \text{ mA}$
+- $t_{\text{active}} = 30 \text{ s}$
+- $t_{\text{sleep}} = 1800 \text{ s}$
+- $t_{\text{overall}} = 1830 \text{ s}$
 
-- **Power Consumption (1-Minute Interval)**
-  $$I_{\text{avg, 1 min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
-  $$I_{\text{avg, 1 min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 30\text{ s})}{60\text{ s}} = \frac{960 + 0.15}{60}\text{ mA} \approx 16.00\text{ mA}$$
-  $$\text{Battery Life}_{\text{hours}} = \frac{44200\text{ mAh}}{16.00\text{ mA}} \approx 2762.5\text{ hours}$$
-  $$\text{Battery Life}_{\text{days}} = \frac{2762.5\text{ hours}}{24\text{ hours/day}} \approx 115.1\text{ days}$$
+#### Battery Configuration
+
+4x SAFT LSH 20 ($\text{Li-SOCl}_2$) in parallel:
+- Nominal capacity: $13000\text{ mAh}$ per battery
+- Total nominal capacity: $4 \times 13000\text{ mAh} = 52000\text{ mAh}$
+- Usable capacity (de-rated to $85\%$): $44200\text{ mAh}$
+
+#### Power Consumption — 30-Minute Interval
+
+$$I_{\text{avg, 30 min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
+
+$$I_{\text{avg, 30 min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 1800\text{ s})}{1830\text{ s}} = \frac{969}{1830}\text{ mA} \approx 0.53\text{ mA}$$
+
+$$\text{Battery Life (hours)} = \frac{44200\text{ mAh}}{0.53\text{ mA}} \approx 83396\text{ hours}$$
+
+$$\text{Battery Life (days)} = \frac{83396\text{ hours}}{24\text{ h/day}} \approx 3474.8\text{ days}$$
+
+$$\text{Battery Life (years)} = \frac{3474.8\text{ days}}{365\text{ days/year}} \approx 9.52\text{ years}$$
+
+#### Power Consumption — 1-Minute Interval
+
+$$I_{\text{avg, 1 min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
+
+$$I_{\text{avg, 1 min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 30\text{ s})}{60\text{ s}} = \frac{960 + 0.15}{60}\text{ mA} \approx 16.00\text{ mA}$$
+
+$$\text{Battery Life (hours)} = \frac{44200\text{ mAh}}{16.00\text{ mA}} \approx 2762.5\text{ hours}$$
+
+$$\text{Battery Life (days)} = \frac{2762.5\text{ hours}}{24\text{ h/day}} \approx 115.1\text{ days}$$
+
+#### Results
 
 As we can see, the change in transmission interval will have a huge impact on battery life expectancy. In case of a 30-minute interval, the expected battery life is 3,474.8 days (approx. 9.5 years). In contrast, if the transmission interval is set to 1 minute, the expected battery life is only 115.1 days (approx. 3.8 months), which is 30 times less.
+
 ---
 
 ##  Thingsboard Dashboard
