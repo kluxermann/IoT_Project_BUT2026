@@ -67,15 +67,15 @@ As is in the nature of the project we will need to send data frequently, every 3
   - Usable capacity (de-rated to $85\%$): $44200\text{ mAh}$
 
 - **Power Consumption (30-Minute Interval)**
-  $$I_{\text{avg\_30\_min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
-  $$I_{\text{avg\_30\_min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 1800\text{ s})}{1830\text{ s}} = \frac{969}{1830}\text{ mA} \approx 0.53\text{ mA}$$
+  $$I_{\text{avg, 30 min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
+  $$I_{\text{avg, 30 min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 1800\text{ s})}{1830\text{ s}} = \frac{969}{1830}\text{ mA} \approx 0.53\text{ mA}$$
   $$\text{Battery Life}_{\text{hours}} = \frac{44200\text{ mAh}}{0.53\text{ mA}} \approx 83396\text{ hours}$$
   $$\text{Battery Life}_{\text{days}} = \frac{83396\text{ hours}}{24\text{ hours/day}} \approx 3474.8\text{ days}$$
   $$\text{Battery Life}_{\text{years}} = \frac{3474.8\text{ days}}{365\text{ days/year}} \approx 9.52\text{ years}$$
 
 - **Power Consumption (1-Minute Interval)**
-  $$I_{\text{avg\_1\_min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
-  $$I_{\text{avg\_1\_min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 30\text{ s})}{60\text{ s}} = \frac{960 + 0.15}{60}\text{ mA} \approx 16.00\text{ mA}$$
+  $$I_{\text{avg, 1 min}} = \frac{(I_{\text{active}} \cdot t_{\text{active}}) + (I_{\text{sleep}} \cdot t_{\text{sleep}})}{t_{\text{overall}}}$$
+  $$I_{\text{avg, 1 min}} = \frac{(32\text{ mA} \cdot 30\text{ s}) + (0.005\text{ mA} \cdot 30\text{ s})}{60\text{ s}} = \frac{960 + 0.15}{60}\text{ mA} \approx 16.00\text{ mA}$$
   $$\text{Battery Life}_{\text{hours}} = \frac{44200\text{ mAh}}{16.00\text{ mA}} \approx 2762.5\text{ hours}$$
   $$\text{Battery Life}_{\text{days}} = \frac{2762.5\text{ hours}}{24\text{ hours/day}} \approx 115.1\text{ days}$$
 
