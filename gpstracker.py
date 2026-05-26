@@ -109,10 +109,6 @@ def parse_raw_data(resp_str):
     return False
 
 def processQirdResponse(resp):
-    if "rdy" in resp.lower():
-        print("modem reset detected!")
-        configRadio()
-        return
     lines = resp.splitlines()
     for line in lines:
         line = line.strip()
@@ -203,7 +199,6 @@ bg77 = BG77.BG77(bg_uart, verbose=True, radio=False)
 configRadio()
 
 while True:
-    force_wakeup = False
     sock_link = None
     print("\n--- loop start ---")
     print("current interval:", sleep_interval, "s")
